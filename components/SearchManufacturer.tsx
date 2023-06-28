@@ -23,7 +23,7 @@ const SearchManufacturer = ({
         );
 
   return (
-    <div className="search-search-manufacturer">
+    <div className="search-manufacturer">
       <Combobox value={manufacturer} onChange={setManufacturer}>
         <div className="relative w-full">
           <Combobox.Button className={"absolute top-[14px]"}>
@@ -48,7 +48,10 @@ const SearchManufacturer = ({
             leaveTo="opacity-0"
             afterLeave={() => setQuery("")}
           >
-            <Combobox.Options>
+            <Combobox.Options
+              className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+              static
+            >
               {filteredManufacturers.map((item) => (
                 <Combobox.Option
                   key={item}
